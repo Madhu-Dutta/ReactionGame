@@ -1,0 +1,40 @@
+<div id="parentElementID">
+    <button type="button" id="1">Button1</button>
+    <button type="button" id="2">Button1</button>
+    <button type="button" id="3">Button1</button>
+</div>
+
+
+
+function myFunction1 (num) {
+    alert("You called 'myFunction1()', with the argument: " + num);
+}
+
+function myFunction2 (num) {
+    alert("You called 'myFunction2()', with the argument: " + num);
+}
+
+function myFunction3 (num) {
+    alert("You called 'myFunction3()', with the argument: " + num);
+}
+
+function myFunction (event) {
+    var x = event.target.id;
+    console.log(event.target, x);
+    switch (x) {
+        case '1':
+            myFunction1(x);
+            break;
+        case '2':
+            myFunction2(x);
+            break;
+        case '3':
+            myFunction3(x);
+            break;
+        default:
+            return false;
+    }
+}
+
+var parent = document.getElementById('parentElementID');
+parent.addEventListener('click', myFunction);
